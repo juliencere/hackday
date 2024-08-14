@@ -1,5 +1,11 @@
 # RateLimited
 
+Project generated using the command:
+
+```
+mix phx.new rate_limited --no-ecto --no-html --no-esbuild --no-gettext --no-live --no-mailer --no-tailwind --no-dashboard
+```
+
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
