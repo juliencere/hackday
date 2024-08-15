@@ -13,5 +13,6 @@ defmodule RateLimitedWeb.Router do
     get "/account_lookup/:account_nr", PingController, :account_lookup
     get "/compliance/:account_nr", PingController, :compliance
     get "/post_xml", PingController, :post_xml
+    post "/post_xml", PingController, :post_external_xml
   end
 end

@@ -70,4 +70,12 @@ defmodule RateLimitedWeb.PingController do
 
     text(conn, xml_file)
   end
+
+    def post_external_xml(conn, params) do
+    {:ok, body, conn} = read_body(conn)
+    IO.inspect(body)
+    send_mq(body)
+
+    text(conn, body)
+  end
 end
