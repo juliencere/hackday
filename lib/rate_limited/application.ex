@@ -14,7 +14,8 @@ defmodule RateLimited.Application do
       # Start a worker by calling: RateLimited.Worker.start_link(arg)
       # {RateLimited.Worker, arg},
       # Start to serve requests, typically the last entry
-      RateLimitedWeb.Endpoint
+      RateLimitedWeb.Endpoint,
+      {RateLimitWeb.PaymentListener, name: Listener}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
