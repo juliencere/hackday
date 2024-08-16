@@ -22,9 +22,10 @@ defmodule RateLimitWeb.PaymentListener do
     IO.inspect(frame.body)
     IO.inspect(state)
 
-    res = XmlParser.parse_xml(frame.body)
+    res =
+      XmlParser.parse_xml(frame.body)
       |> to_string
-      |> RateLimitWeb.PaymentService.handle_call
+      |> RateLimitWeb.PaymentService.handle_call()
 
     IO.inspect("response")
     IO.inspect(res)

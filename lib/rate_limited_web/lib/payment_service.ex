@@ -19,10 +19,18 @@ defmodule RateLimitWeb.PaymentService do
   end
 
   defp callAccount(account_nr) do
-    Req.get!("http://localhost:4000/api/account_lookup/#{account_nr}").body["account_nr"]
+    ([url: "http://localhost:4000/api/account_lookup/#{account_nr}"]
+     |> Keyword.merge(Application.get_env(:rate_limted, :options, []))
+     |> Req.request!()).body["account_nr"]
+
+    # Req.get!("http://localhost:4000/api/account_lookup/#{account_nr}").body["account_nr"]
   end
 
   defp callComp(numb) do
-    Req.get!("http://localhost:4000/api/compliance/#{numb}").body["result"]
+    ([url: "http://localhost:4000/api/compliance/#{numb}"]
+     |> Keyword.merge(Application.get_env(:rate_limted, :options, []))
+     |> Req.request!()).body["result"]
+
+    # Req.get!("http://localhost:4000/api/compliance/#{numb}").body["result"]
   end
 end

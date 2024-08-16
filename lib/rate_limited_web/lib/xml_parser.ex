@@ -6,5 +6,4 @@ defmodule RateLimtedWeb.XmlParser do
     IO.inspect(msg_id)
     msg_id
   end
-
 end

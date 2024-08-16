@@ -40,7 +40,8 @@ defmodule RateLimited.MixProject do
       {:bandit, "~> 1.5"},
       {:req, "~> 0.5.0"},
       {:stompex, git: "git@github.com:manageplaces/Stompex.git"},
-      {:sweet_xml, "~> 0.7.4"}
+      {:sweet_xml, "~> 0.7.4"},
+      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false}
     ]
   end
 
